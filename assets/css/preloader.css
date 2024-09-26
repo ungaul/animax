@@ -1,0 +1,13 @@
+#preloader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  z-index: 12;
+  background: var(--background);
+  transition: 1.2s ease-in-out;
+}
+
+.preloader-swipe {
+  transform: translateY(-100%);
+}

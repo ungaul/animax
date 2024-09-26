@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html translate="no" lang="fr" notranslate>
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- SEO -->
+    <meta name="robots" content="none" />
+    <meta name="keywords" content="streaming, anime, free, adfree, sanspub, gratuit, illimité, onepiece" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.animax.site/" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- Meta Tags -->
+    <title>Animax</title>
+    <meta property="og:title" content="Animax" />
+    <meta name="description" content="Animax" />
+    <meta itemprop="description" content="Animax" />
+    <meta name="twitter:title" content="Animax" />
+    <meta name="twitter:description" content="Animax" />
+
+    <!-- Design -->
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../assets/img/favicon.png" />
+    <meta name="theme-color" content="#121212" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta itemprop="image" content="./assets/img/Nakama.jpg" />
+    <meta name="twitter:image" content="./assets/img/Nakama.jpg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Swiper -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom Video Player -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <script defer src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+
+    <!-- JS -->
+    <script defer src="../assets/js/common.js"></script>
+    <script defer src="../assets/js/preloader.js"></script>
+    <script defer src="assets/js/episodes.js"></script>
+    <script defer src="../assets/js/video.js"></script>
+    <script defer src="assets/js/variables.js"></script>
+    <script defer src="../assets/js/context-menu.js"></script>
+    <script defer src="../assets/js/header.js"></script>
+    <script defer src="../assets/js/searchbar.js"></script>
+    <script defer src="../assets/js/animations.js"></script>
+  </head>
+
+  <body>
+    <div id="preloader"></div>
+
+    <div class="context-menu"></div>
+
+    <div id="phone-menu-new"></div>
+
+    <div id="more" class="hidden"></div>
+
+    <div id="player" class="hidden">
+      <div class="video-container">
+        <video playsinline controls autoplay type="video/mkv">
+          <track label="Francais" kind="subtitles" srclang="fr" default crossorigin="anonymous" />
+          <!-- <track label="English" kind="subtitles" srclang="en" /> -->
+          Codec non supporté
+        </video>
+        <div id="player-data-container">
+          <div id="player-data">
+            <div id="player-data-left">
+              <div id="anime-info">
+                <div id="anime-info-inner">
+                  <p class="anime-name">One Piece</p>
+                  <div class="vertical-bar"></div>
+                  <p class="rating"></p>
+                </div>
+                <ion-icon name="bookmark"></ion-icon>
+              </div>
+              <h3 id="episode-title"></h3>
+              <p class="mode">VOSTFR</p>
+              <p id="description"></p>
+            </div>
+            <div id="player-data-right">
+              <select id="episode-quick-list" onchange="customEp(Number(this.value))"></select>
+              <article id="previous-episode">
+                <p><b>ÉPISODE PRÉCÉDENT</b></p>
+                <div class="episode-preview">
+                  <div class="episode-preview-thumbnail"><ion-icon name="play"></ion-icon></div>
+                  <div class="episode-preview-info">
+                    <p class="episode-preview-title"></p>
+                    <p class="mode">
+                      VOSTFR<span>7.5k<ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article id="next-episode">
+                <p><b>PROCHAIN ÉPISODE</b></p>
+                <div class="episode-preview">
+                  <div class="episode-preview-thumbnail"><ion-icon name="play"></ion-icon></div>
+                  <div class="episode-preview-info">
+                    <p class="episode-preview-title"></p>
+                    <p class="mode">
+                      VOSTFR<span>7.5k<ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <button id="more-episodes" onclick="episodeList()"><ion-icon name="tv-outline"></ion-icon>Plus d'épisodes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav></nav>
+
+    <div id="searchbar-container"></div>
+
+    <div id="top">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide" style="background: url(assets/img/last.jpg)" onclick="customEp(1050)">Episode 1050<button>Regarder</button></div>
+          <div class="swiper-slide" style="background: url(assets/img/banner/over-the-top.jpg)" onclick="window.open('https://link.storjshare.io/ju3iaxo6gq6jcrd2cxkusqhvfrfq/one-piece%2Fopenings%2F22.mkv','popup','width=1280,height=720');">
+            Opening 22<button>Regarder</button>
+          </div>
+          <div class="swiper-slide" style="background: url(assets/img/banner/23.jpg)" onclick="window.open('https://link.storjshare.io/juy3udvjeoxc3ocnuznlj6rcmynq/one-piece%2Fopenings%2F23.mkv','popup','width=1280,height=720');">
+            Opening 23<button>Regarder</button>
+          </div>
+          <div class="swiper-slide" style="background: url(assets/img/banner/paint.jpg)" onclick="window.open('https://link.storjshare.io/jv32v2gyrdst3mtj7z77usglocsa/one-piece%2Fopenings%2F24.mkv','popup','width=1280,height=720');">
+            Opening 24<button>Regarder</button>
+          </div>
+
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+        </div>
+      </div>
+    </div>
+
+    <div id="continue">
+      <p>Continuer de regarder</p>
+      <div class="horizontal-bar"></div>
+      <article>
+        <figure></figure>
+        <p class="title"></p>
+        <div class="saga-info">
+          <p class="type"></p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+    </div>
+
+    <div id="sagas">
+      <p>Sagas</p>
+      <div class="horizontal-bar"></div>
+      <article onclick="customEp(1)">
+        <figure style="background: url('assets/img/poster/Saga 1. East Blue (1-61).jpg')"></figure>
+        <p class="title">Saga 1. East Blue (1-61)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(62)">
+        <figure style="background: url('assets/img/poster/Saga 2. Alabasta (62-135).jpg')"></figure>
+        <p class="title">Saga 2. Alabasta (62-135)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(136)">
+        <figure style="background: url('assets/img/poster/Saga 3. Île Céleste (136-206).jpg')"></figure>
+        <p class="title">Saga 3. Île Céleste (136-206)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(207)">
+        <figure style="background: url('assets/img/poster/Saga 4. Water Seven (207-325).jpg')"></figure>
+        <p class="title">Saga 4. Water Seven (207-325)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(326)">
+        <figure style="background: url('assets/img/poster/Saga 5. Thriller Bark (326-384).jpg')"></figure>
+        <p class="title">Saga 5. Thriller Bark (326-384)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(385)">
+        <figure style="background: url('assets/img/poster/Saga 6. Guerre au Sommet (385-516).jpg')"></figure>
+        <p class="title">Saga 6. Guerre au Sommet (385-516)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(517)">
+        <figure style="background: url('assets/img/poster/Saga 7. Île des Hommes-Poissons (517-574).jpg')"></figure>
+        <p class="title">Saga 7. Île des Hommes-Poissons (517-574)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(575)">
+        <figure style="background: url('assets/img/poster/Saga 8. Alliance Pirate (575-750).jpg')"></figure>
+        <p class="title">Saga 8. Alliance Pirate (575-750)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customEp(751)">
+        <figure style="background: url('assets/img/poster/Saga 9. Quatre Empereurs (751-1000).jpg')"></figure>
+        <p class="title">Saga 9. Quatre Empereurs (751-1...)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+      <article onclick="customFilm(13)" class="new-series">
+        <figure style="background: url('assets/img/poster/films.jpg')"></figure>
+        <p class="title">Hors Série - Films (1-14)</p>
+        <div class="saga-info">
+          <p class="type">Series</p>
+          ⬪
+          <p class="mode">VOSTFR</p>
+        </div>
+      </article>
+    </div>
+
+    <div id="end">
+      <img src="assets/img/choppper.png" alt="Image" />
+      <p>Vous cherchez toujours quelque chose à regarder ?</p>
+      <button id="back-to-top" onclick="window.scrollTo(0, 0);">Remonter</button>
+    </div>
+
+    <footer></footer>
+  </body>
+</html>

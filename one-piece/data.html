@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html translate="no" lang="fr" notranslate>
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- SEO -->
+    <meta name="robots" content="none" />
+    <meta name="keywords" content="streaming, anime, free, adfree, sanspub, gratuit, illimité, onepiece" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.animax.site/" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <!-- Meta Tags -->
+    <title>Animax</title>
+    <meta name="description" content="Animax" />
+    <meta itemprop="description" content="Animax" />
+    <meta name="twitter:title" content="Animax" />
+    <meta name="twitter:description" content="Animax" />
+
+    <!-- Design -->
+    <link rel="shortcut icon" href="/geijutsu/assets/img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/geijutsu/assets/img/favicon.png" />
+    <meta name="theme-color" content="#121212" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta itemprop="image" content="./assets/img/Nakama.jpg" />
+    <meta name="twitter:image" content="./assets/img/Nakama.jpg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/data.css" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Custom Video Player -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <script defer src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+
+    <!-- JS -->
+    <script defer src="assets/js/episodes.js"></script>
+    <script defer src="assets/js/data.js"></script>
+    <script defer src="assets/js/animations.js"></script>
+    <script defer src="../assets/js/common.js"></script>
+    <script defer src="../assets/js/context-menu.js"></script>
+    <script defer src="../assets/js/header.js"></script>
+  </head>
+
+  <body>
+    <div class="context-menu"></div>
+
+    <div id="phone-menu"></div>
+
+    <div id="phone-menu-new"></div>
+
+    <div id="more" class="hidden">
+      <p onclick="transitionToPage('index.html')">Accueil du site</p>
+    </div>
+
+    <nav></nav>
+
+    <div id="top">Données</div>
+
+    <div id="table">
+      <div id="number"></div>
+      <div id="date"></div>
+      <div id="title"></div>
+      <div id="rating"></div>
+      <div id="description"></div>
+      <div id="saga"></div>
+    </div>
+
+    <div id="end">
+      <img src="assets/img/choppper.png" alt="Image" />
+      <p>Vous cherchez toujours quelque chose à regarder ?</p>
+      <button id="back-to-top" onclick="window.scrollTo(0, 0);">Remonter</button>
+    </div>
+
+    <footer></footer>
+  </body>
+</html>

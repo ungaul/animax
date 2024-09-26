@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html translate="no" lang="fr" notranslate>
+
+<head>
+  <!-- HTML Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <!-- SEO -->
+  <meta name="robots" content="none" />
+  <meta name="keywords" content="streaming, anime, free, adfree, sanspub, gratuit, illimité, onepiece" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.animax.site/" />
+  <link rel="manifest" href="../manifest.json" />
+
+  <!-- Meta Tags -->
+  <title>Animax</title>
+  <meta property="og:title" content="Animax" />
+  <meta name="description" content="Animax" />
+  <meta itemprop="description" content="Animax" />
+  <meta name="twitter:title" content="Animax" />
+  <meta name="twitter:description" content="Animax" />
+
+  <!-- Design -->
+  <link rel="shortcut icon" href="/geijutsu/assets/img/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/geijutsu/assets/img/favicon.png" />
+  <meta name="theme-color" content="#121212" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta itemprop="image" content="./assets/img/Nakama.jpg" />
+  <meta name="twitter:image" content="./assets/img/Nakama.jpg" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="/geijutsu/assets/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="/geijutsu/assets/css/scrollbar.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/manga.css" />
+  <link rel="stylesheet" type="text/css" href="/geijutsu/assets/css/context-menu.css" />
+  <link rel="stylesheet" type="text/css" href="/geijutsu/assets/css/header.css" />
+  <link rel="stylesheet" type="text/css" href="/geijutsu/assets/css/footer.css" />
+  <link rel="stylesheet" type="text/css" href="/geijutsu/assets/css/searchbar.css" />
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- JS -->
+  <script defer src="./assets/js/manga.js"></script>
+  <script defer src="./assets/js/tomes.js"></script>
+  <script defer src="./assets/js/animations.js"></script>
+  <script defer src="/geijutsu/assets/js/context-menu.js"></script>
+  <script defer src="/geijutsu/assets/js/header.js"></script>
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/geijutsu/assets/js/searchbar.js"></script>
+</head>
+
+<body>
+  <!-- Context Menu -->
+  <div class="context-menu"></div>
+
+  <!-- Phone Menu New -->
+  <div id="phone-menu-new">
+    <div class="phone-menu-new-item active" onclick="transitionToPage('/animax.html')">
+      <ion-icon name="home-outline"></ion-icon>
+      <p>Accueil</p>
+    </div>
+    <div class="phone-menu-new-item" onclick="transitionToPage('/one-piece/')">
+      <img src="assets/img/one-piece-bw.png" alt="Icon" class="pfp" />
+      <p>One Piece</p>
+    </div>
+    <div class="phone-menu-new-item" onclick="transitionToPage('/vinland-saga/')">
+      <img src="assets/img/vinland-saga-bw.png" alt="Icon" class="pfp" />
+      <p>Vinland Saga</p>
+    </div>
+    <div class="phone-menu-new-item" onclick="transitionToPage('/spy-family/')">
+      <img src="assets/img/spy-family-bw.png" alt="Icon" class="pfp" />
+      <p>Spy Family</p>
+    </div>
+    <div class="phone-menu-new-item" onclick="transitionToPage('/voir-animes/')">
+      <img src="assets/img/voiranimes-bw.png" alt="Icon" class="pfp" />
+      <p>VoirAnimes</p>
+    </div>
+  </div>
+
+  <div id="more" class="hidden"></div>
+
+  <div id="manga-player" class="hidden">
+    <div id="viewer-info"></div>
+    <div id="viewer"></div>
+    <div id="viewer-buttons">
+      <div id="viewer-prev-volume"><ion-icon name="play-back-circle-outline"></ion-icon></div>
+      <div id="autoplay"><ion-icon name="play-circle-outline"></ion-icon></div>
+      <div id="viewer-next-volume"><ion-icon name="play-forward-circle-outline"></ion-icon></div>
+      <select id="viewer-volume-selector"></select>
+    </div>
+  </div>
+
+  <nav>
+    <div id="nav-content">
+      <div id="nav-left">
+        <div onclick="transitionToPage('/geijutsu/animax.html')" class="logo"><img src="../assets/img/favicon-128x.png"
+            alt="Logo" /></div>
+        <div onclick="transitionToPage('index.html')">Anime</div>
+      </div>
+      <div id="nav-right">
+        <ion-icon name="search-outline" id="searchbar-button"></ion-icon>
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <ion-icon name="add-outline"></ion-icon>
+        <div id="profile">
+          <img src="/geijutsu/assets/img/pfp/pfp-1.jpg" alt="Profile Picture" class="pfp" />
+          <ion-icon name="caret-down-outline"></ion-icon>
+        </div>
+      </div>
+      <!-- <button class="home-button hidden" onclick="home()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          Retour à l'Accueil
+        </button> -->
+    </div>
+  </nav>
+
+  <!-- Searchbar -->
+  <div id="searchbar-container"></div>
+
+  <div id="top">
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" style="background: url(assets/img/last-manga.jpg)" onclick="customEp(1050)">Episode
+          1050<button>Regarder</button></div>
+        <div class="swiper-slide" style="background: url(assets/img/banner/over-the-top.jpg)"
+          onclick="window.open('https://link.storjshare.io/ju3iaxo6gq6jcrd2cxkusqhvfrfq/one-piece%2Fopenings%2F22.mkv','popup','width=1280,height=720');">
+          Opening 22<button>Regarder</button>
+        </div>
+        <div class="swiper-slide" style="background: url(assets/img/banner/23.jpg)"
+          onclick="window.open('https://link.storjshare.io/juy3udvjeoxc3ocnuznlj6rcmynq/one-piece%2Fopenings%2F23.mkv','popup','width=1280,height=720');">
+          Opening 23<button>Regarder</button>
+        </div>
+        <div class="swiper-slide" style="background: url(assets/img/banner/paint.jpg)"
+          onclick="window.open('https://link.storjshare.io/jv32v2gyrdst3mtj7z77usglocsa/one-piece%2Fopenings%2F24.mkv','popup','width=1280,height=720');">
+          Opening 24<button>Regarder</button>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+      </div>
+      <!-- <div id="top-logo" style="background: url(one-piece/assets/img/one-piece-logo.png)"></div> -->
+      <button><ion-icon name="play-outline"></ion-icon>Regarder</button>
+    </div>
+  </div>
+
+  <div id="continue">
+    <p>Continuer de lire</p>
+    <div class="horizontal-bar"></div>
+    <article>
+      <img alt="Continue" />
+      <p class="title"></p>
+      <div class="saga-info">
+        <p class="type"></p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+  </div>
+
+  <div id="sagas">
+    <p>Tomes</p>
+    <div class="horizontal-bar"></div>
+    <article onclick="customManga(1)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/1.jpg"
+        alt="Cover" />
+      <p class="title">Tome 1-9</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(10)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/10.jpg"
+        alt="Cover" />
+      <p class="title">Tome 10-19</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(20)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/20.jpg"
+        alt="Cover" />
+      <p class="title">Tome 20-29</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(30)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/30.jpg"
+        alt="Cover" />
+      <p class="title">Tome 30-39</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(40)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/40.jpg"
+        alt="Cover" />
+      <p class="title">Tome 40-49</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(50)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/50.jpg"
+        alt="Cover" />
+      <p class="title">Tome 50-59</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(60)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/60.jpg"
+        alt="Cover" />
+      <p class="title">Tome 60(69</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(7)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/7.jpg"
+        alt="Cover" />
+      <p class="title">Tome 70-79</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(80)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/80.jpg"
+        alt="Cover" />
+      <p class="title">Tome 80-89</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(90)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/90.jpg"
+        alt="Cover" />
+      <p class="title">Tome 90-99</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+    <article onclick="customManga(100)">
+      <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/covers/100.jpg"
+        alt="Cover" />
+      <p class="title">Tome 100</p>
+      <div class="saga-info">
+        <p class="type">Manga</p>
+        ⬪
+        <p class="mode">VF</p>
+      </div>
+    </article>
+  </div>
+
+  <div id="end">
+    <img src="assets/img/choppper.png" alt="Image" />
+    <p>Vous cherchez toujours quelque chose à regarder ?</p>
+    <button id="back-to-top" onclick="window.scrollTo(0, 0);">Remonter</button>
+  </div>
+
+  <footer></footer>
+
+  <!-- <div id="episode-list" class="fadeOut">
+      <div id="episode-list-content">
+        <ion-icon name="close-outline" id="close-episode-list"></ion-icon>
+        <div id="episode-list-content-list">
+          <article>
+            <img src="https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/thumbnails/1.jpg" alt="Episode" />
+            <div class="episode-list-item-text">
+              <h1>À l'aube d'une grande aventure !</h1>
+              <p>Episode 1</p>
+              <p class="mode">VOSTFR</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div> -->
+</body>
+
+</html>

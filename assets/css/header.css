@@ -1,0 +1,362 @@
+/* Disabling features */
+
+nav ion-icon[name="bookmark-outline"],
+nav #profile {
+  display: none !important;
+}
+
+:root {
+  --header-border-width: 3px;
+}
+
+/* Header */
+
+nav {
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--background-transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 11;
+}
+
+a[href="manga.html"],
+a[href="index.html"] {
+  color: var(--accent-color) !important;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  /* font-weight: 600; */
+}
+
+div#nav-right ion-icon {
+  font-size: 23px;
+}
+
+div#profile {
+  display: flex;
+  align-items: center;
+  cursor: var(--link-cursor);
+}
+
+div#profile ion-icon[name="caret-down-outline"] {
+  font-size: 15px;
+  padding-right: 0;
+}
+
+img.pfp {
+  height: 34px !important;
+  padding: 0 !important;
+  border-radius: 100%;
+  /* margin-left: 10px; */
+}
+
+nav a,
+div#nav-right *,
+div#nav-left[onclick] {
+  color: #bdbdbd;
+  height: calc(var(--nav-height) - 2 * var(--header-border-width));
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: var(--link-cursor);
+}
+
+nav div[onclick] {
+  line-height: calc(var(--nav-height) - 2 * var(--header-border-width));
+  /* border-bottom: 5px solid transparent; */
+}
+
+nav div[onclick].active {
+  border-color: var(--second);
+}
+
+.active {
+  color: var(--accent-color);
+}
+
+.active img {
+  filter: sepia(100%) saturate(10000) hue-rotate(1deg);
+}
+
+nav div[onclick]:hover,
+ion-icon:hover {
+  background: #121316;
+  color: white;
+}
+
+#nav-right ion-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-right ion-icon:after {
+  content: "";
+  width: 40px;
+  aspect-ratio: 1;
+  background: #121316;
+  z-index: -1;
+  border-radius: 100px;
+  position: absolute;
+  opacity: 0;
+}
+
+#nav-right ion-icon.icon-clicked:after {
+  opacity: 100;
+}
+
+nav div#nav-content {
+  max-width: 1375px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  padding: 0 15px;
+}
+
+div#nav-left,
+div#nav-right {
+  display: flex;
+  align-items: center;
+  max-height: var(--nav-height);
+}
+
+div#nav-left div[onclick],
+div#nav-right div[onclick] {
+  padding: 0 10px;
+  cursor: var(--link-cursor);
+}
+
+nav #phone-menu-open {
+  color: var(--accent-color);
+  display: none;
+}
+
+#nav-left div,
+nav ion-icon {
+  border: transparent solid var(--header-border-width);
+  user-select: none;
+}
+
+#nav-left div[onclick]:active,
+nav ion-icon:active {
+  border-color: white;
+}
+
+#phone-menu-new {
+  position: fixed;
+  display: none;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: var(--nav-height);
+  width: 100vw;
+  background: var(--background-transparent);
+}
+
+.phone-menu-new-item {
+  padding: 10px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  width: 75px;
+  height: 100%;
+}
+
+#phone-menu-new ion-icon,
+#phone-menu-new .pfp {
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 0 !important;
+}
+
+#phone-menu-new p {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  width: 45px;
+  cursor: pointer;
+  transform: scaleX(-1);
+  padding: 5px;
+}
+
+label#phone-menu-open span {
+  background: var(--accent-color);
+  border-radius: 5px;
+  height: 3.5px;
+  margin: 3.5px 0;
+  transition: 0.4s;
+  display: flex;
+}
+
+#phone-menu-open span:nth-of-type(1) {
+  width: 50%;
+}
+
+#phone-menu-open span:nth-of-type(2) {
+  width: 100%;
+}
+
+#phone-menu-open span:nth-of-type(3) {
+  width: 75%;
+}
+
+#phone-menu-open input[type="checkbox"] {
+  display: none;
+}
+
+#phone-menu-open input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(4px, 0px);
+}
+
+#phone-menu-open input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+#phone-menu-open input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(15px, -6.5px) rotatez(45deg);
+}
+
+#phone-menu {
+  background: var(--background-transparent);
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: var(--top-height);
+  top: var(--nav-height);
+  font-size: 25px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--fourth);
+  border-bottom: 1px solid var(--fourth);
+  transform: translateY(calc(var(--top-height) * -1 - var(--nav-height)));
+}
+
+#phone-menu.phone-menu-opened {
+  transform: none !important;
+}
+
+#phone-menu * {
+  line-height: 3rem;
+  text-align: center;
+}
+
+#phone-menu a[href="/geijutsu/voir-animes/"] {
+  border-top: 1px solid var(--second) !important;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.logo {
+  height: calc(var(--nav-height));
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: 21px;
+  font-weight: bolder;
+  cursor: var(--link-cursor);
+}
+
+.logo img {
+  width: calc(var(--nav-height) * 1.55);
+  aspect-ratio: 1008/995;
+  object-fit: cover;
+  max-height: var(--nav-height);
+}
+
+.logo:hover {
+  filter: brightness(0.8);
+}
+
+.logo:after {
+  content: "One Piece";
+  font-weight: 550;
+  font-size: 12px;
+  color: var(--accent-color);
+  /* transform: translateY(10px); */
+  display: none;
+}
+
+#more {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10;
+  top: calc(var(--nav-height) + 5px);
+  /* right: calc(1 * (100vw - 1375px) - 25px); */
+  /* right: calc(3vw + 40px); */
+  right: calc((100vw - (720px * 16 / 9)) / 2);
+  border: 1px solid var(--background-transparent);
+  backdrop-filter: blur(10px) brightness(0.5);
+  border-radius: 5px;
+}
+
+#more * {
+  padding: 10px;
+  background: transparent;
+  cursor: var(--link-cursor);
+  width: 100%;
+}
+
+#more *:hover {
+  background: rgb(20, 20, 20);
+}
+
+@media screen and (max-width: 1400px) {
+  nav div#nav-content {
+    padding: 0 !important;
+  }
+
+  :root {
+    --nav-height: 60px !important;
+  }
+
+  #phone-menu-new {
+    display: flex;
+  }
+
+  #more{
+    right: 10px !important;
+  }
+
+  /* div#nav-left div[onclick],
+  div#nav-right div[onclick] {
+    padding: 0 !important;
+  } */
+
+  #nav-left .logo[onclick] {
+    display: flex !important;
+  }
+
+  /* #phone-menu-open {
+    display: flex !important;
+  } */
+
+  div [onclick="transitionToPage('manga.html')"] {
+    display: none !important;
+  }
+}

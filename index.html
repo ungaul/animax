@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html translate="no" lang="fr" notranslate>
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="streaming, anime, free, adfree, sanspub, gratuit, illimité, onepiece" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.animax.site/" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Meta Tags -->
+    <title>Animax</title>
+    <meta property="og:title" content="Animax" />
+    <meta name="description" content="Animax" />
+    <meta itemprop="description" content="Animax" />
+    <meta name="twitter:title" content="Animax" />
+    <meta name="twitter:description" content="Animax" />
+
+    <!-- Design -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+    <meta name="theme-color" content="#121212" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta itemprop="image" content="./assets/img/Nakama.jpg" />
+    <meta name="twitter:image" content="./assets/img/Nakama.jpg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- JS -->
+    <script defer src="/assets/js/common.js"></script>
+    <script defer src="assets/js/animations.js"></script>
+    <script defer src="assets/js/context-menu.js"></script>
+    <script defer src="assets/js/header.js"></script>
+    <script defer src="/assets/js/common.js"></script>
+    <script defer src="assets/js/searchbar.js"></script>
+    <script defer src="assets/js/swiper.js"></script>
+  </head>
+
+  <body>
+    <!-- Context Menu -->
+    <div class="context-menu"></div>
+
+    <!-- Phone Menu New -->
+    <div id="phone-menu-new"></div>
+
+    <div id="more" class="hidden"></div>
+
+    <div id="app">
+      <nav></nav>
+
+      <!-- Searchbar -->
+      <div id="searchbar-container"></div>
+      
+      <div id="top">
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide" style="background: url(one-piece/assets/img/Nakama.jpg);" onclick="transitionToPage('one-piece/')"></div>
+            <div class="swiper-slide" style="background: url(spy-family/assets/img/banner/spy.jpg);" onclick="transitionToPage('spy-family/')"></div>
+            <div class="swiper-slide" style="background: url(vinland-saga/assets/img/banner/thorfinn.jpg);" onclick="transitionToPage('vinland-saga/')"></div>
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+        </div>
+        <!-- <div id="top-logo" style="background: url(one-piece/assets/img/one-piece-logo.png)"></div> -->
+        <button><ion-icon name="play-outline"></ion-icon>Regarder</button>
+      </div>
+
+      <section id="recent">
+        <div class="section-top">
+          <h1>Vus récemment<span>| 2 titres</span></h1>
+          <a href="#list">Tous les animes<ion-icon name="chevron-forward-outline"></ion-icon></a>
+        </div>
+        <div class="card-container">
+          <div onclick="transitionToPage('one-piece/')">
+            <div class="card" style="background: url(one-piece/assets/img/banner/1000.jpg);">
+              <div class="card-bottom">
+                <div class="card-bottom-left">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                  <div class="card-info">
+                    <h3>One Piece</h3>
+                    <p>Shōnen</p>
+                  </div>
+                </div>
+                <button>Regarder</button>
+              </div>
+            </div>
+          </div>
+          <div onclick="transitionToPage('vinland-saga/')">
+            <div class="card" style="background: url(vinland-saga/assets/img/banner/thorfinn.jpg);">
+              <div class="card-bottom">
+                <div class="card-bottom-left">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                  <div class="card-info">
+                    <h3>Vinland Saga</h3>
+                    <p>Shōnen</p>
+                  </div>
+                </div>
+                <button>Regarder</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="list">
+        <div class="section-top">
+          <h1>Liste des animes<span>| 3 titres</span></h1>
+        </div>
+        <div class="card-container">
+          <div onclick="transitionToPage('one-piece/')">
+            <div class="card" style="background: url(one-piece/assets/img/banner/1000.jpg);">
+              <div class="card-bottom">
+                <ion-icon name="play-circle-outline"></ion-icon>
+                <div class="card-info">
+                  <h3>One Piece</h3>
+                  <p>Shōnen</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div onclick="transitionToPage('spy-family/')">
+            <div class="card" style="background: url(spy-family/assets/img/banner/spy.jpg);">
+              <div class="card-bottom">
+                <ion-icon name="play-circle-outline"></ion-icon>
+                <div class="card-info">
+                  <h3>Spy × Family</h3>
+                  <p>Shōjo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div onclick="transitionToPage('vinland-saga/')">
+            <div class="card" style="background: url(vinland-saga/assets/img/banner/thorfinn.jpg);">
+              <div class="card-bottom">
+                <ion-icon name="play-circle-outline"></ion-icon>
+                <div class="card-info">
+                  <h3>Vinland Saga</h3>
+                  <p>Shōnen</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="end">
+        <img src="one-piece/assets/img/choppper.png" alt="Chopper">
+        <p>Vous cherchez toujours quelque chose à regarder ?</p>
+        <a href="#app"><button>Remonter</button></a>
+      </section>
+    <footer></footer>
+  </body>
+</html>

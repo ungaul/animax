@@ -1,0 +1,197 @@
+@import "preloader.css";
+@import "scrollbar.css";
+@import "header.css";
+@import "footer.css";
+@import "styles.css";
+@import "animax.css";
+@import "context-menu.css";
+@import "searchbar.css";
+@import "video.css";
+
+/* Disabling Features */
+.episode-preview .mode span,
+ion-icon[name="bookmark"] {
+  display: none !important;
+}
+
+#more-episodes {
+  display: none !important;
+}
+
+#top {
+  display: none !important;
+}
+
+/* Variables */
+:root {
+  --background: rgb(0, 0, 0);
+  --background-transparent: rgba(35, 37, 43, 0.975);
+  --main: rgb(40, 40, 40);
+  --main-transparent: rgba(40, 40, 40, 0.9);
+  --second: rgb(255, 255, 255);
+  --second-transparent: rgba(255, 255, 255, 0.9);
+  --third: rgb(126, 126, 126);
+  --fourth: rgb(48, 48, 48);
+  --accent-color: #f47521;
+  --link-cursor: url(/assets/cursors/Link.cur), pointer;
+  --default-cursor: url(/assets/cursors/Normal.cur), default;
+  --nav-background: #23252b;
+  --nav-height: 60px;
+  --top-height: 595px;
+  --swiper-theme-color: var(--background) !important;
+  --swiper-navigation-color: white;
+}
+
+/* Imports */
+@font-face {
+  font-family: Cera Pro;
+  src: url(/assets/fonts/Cera-Pro-Medium.otf);
+}
+
+@font-face {
+  font-family: "Arial Rounded";
+  src: url(/assets/fonts/trebuc.ttf);
+}
+
+@font-face {
+  font-family: "JollyGood Serif Light";
+  src: url(/assets/fonts/Pixilate\ -\ JollyGood\ Serif\ Light.otf);
+}
+
+/* @font-face {
+  font-family: "JollyGood Serif Bold";
+  src: url(/assets/fonts/Pixilate\ -\ JollyGood\ Serif\ Bold.otf);
+}
+
+@font-face {
+  font-family: "JollyGood Serif Regular";
+  src: url(/assets/fonts/Pixilate\ -\ JollyGood\ Serif\ Regular.otf);
+} */
+
+/* Animations */
+
+@keyframes LoadingGradientSwipe {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(33.333%);
+  }
+}
+
+/* Global */
+
+* {
+  box-sizing: border-box;
+  font-family: Cera Pro, system-ui, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 100vw;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-tap-highlight-color: rgba(218, 124, 61, 0.5);
+}
+
+*:hover {
+  transition: 0.3s;
+}
+
+*:not(:hover) {
+  transition: 0.2s;
+}
+
+*:focus-visible {
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  user-select: none;
+}
+
+::selection {
+  color: var(--accent-color);
+  background: #23252b;
+}
+
+h1,
+h3 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  overflow-x: hidden !important;
+  color: var(--second);
+  cursor: var(--default-cursor);
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.no-overflow {
+  overflow: hidden !important;
+}
+
+p {
+  cursor: text;
+  width: fit-content;
+  margin: 0;
+}
+
+.dimmed {
+  background: #000000bb !important;
+  visibility: visible !important;
+  opacity: 100 !important;
+}
+
+figure {
+  margin: 0;
+}
+
+button {
+  cursor: var(--link-cursor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+a[href=""],
+a[href="#"] {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+h1,
+h3 {
+  margin: 0;
+  width: fit-content;
+}
+
+h3 {
+  color: var(--second);
+  font-size: 1.5rem;
+}
+
+a p {
+  cursor: var(--link-cursor);
+}
+
+b {
+  font-weight: bolder;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: var(--link-cursor);
+}

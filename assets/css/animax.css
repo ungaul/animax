@@ -1,0 +1,260 @@
+:root {
+  --swiper-navigation-size: 100%;
+  --max-width: 1160px;
+  --border-radius: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  display: contents;
+}
+
+#top {
+  margin-top: 30px !important;
+  width: var(--max-width);
+  height: 200px;
+  border-radius: var(--border-radius);
+  margin: 0 auto;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+#recent {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: var(--max-width);
+  gap: 15px;
+}
+
+#end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 75px !important;
+  font-size: 20px;
+  padding-bottom: 25px;
+  margin: 0 auto;
+}
+
+#end p {
+  text-align: center;
+  max-width: 80vw;
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: var(--max-width);
+  margin: 0 auto;
+}
+
+#end button {
+  border: 2px solid var(--accent-color);
+  background: transparent;
+  color: var(--accent-color);
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+#end button:hover {
+  background: var(--accent-color);
+}
+
+#end img {
+  width: 150px;
+}
+
+section {
+  padding-top: 30px;
+}
+
+.card-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info p {
+  color: var(--fourth);
+}
+
+.card-bottom {
+  backdrop-filter: blur(30px);
+  background: rgba(32 32 32 / 5%);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 15px;
+  width: 100%;
+  height: 70px;
+}
+
+.card-bottom button {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--background);
+  background: var(--second);
+  padding: 7.5px 17px;
+  font-size: 15px;
+}
+
+.card-bottom ion-icon {
+  font-size: 37.5px;
+}
+
+#list .card-bottom {
+  justify-content: flex-start;
+}
+
+#top button {
+  background: var(--accent-color);
+  border: 1px solid var(--background);
+  padding: 7.5px 22px;
+  font-size: 17.5px;
+  transform: translate(25px, -65px);
+  border-radius: 50px;
+  z-index: 1;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  gap: 5px;
+}
+
+#top button ion-icon {
+  font-size: 23px;
+}
+
+.section-top {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+#top-logo {
+  width: 200px;
+  aspect-ratio: 320/113;
+  background-size: cover !important;
+  background-position: center !important;
+  float: right;
+  transform: translate(-100px, -90px);
+  z-index: 2;
+  position: relative;
+}
+
+.section-top a {
+  display: flex;
+  align-items: center;
+}
+
+.section-top span {
+  color: var(--third);
+  font-size: 17.5px;
+  margin-left: 6px;
+}
+
+.card-container {
+  display: flex;
+  gap: 35px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-position: center !important;
+  background-size: cover !important;
+  aspect-ratio: 16/9;
+  width: 50%;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: flex-end;
+  cursor: var(--link-cursor);
+}
+
+.card:hover .card-bottom,
+#top:hover button {
+  filter: brightness(0.85);
+}
+
+#top,
+section {
+  max-width: 95vw !important;
+}
+
+section div:not([class]) {
+  display: contents;
+}
+
+.swiper {
+  height: 200px;
+  border-radius: var(--border-radius);
+}
+
+.swiper-slide {
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: var(--border-radius);
+}
+
+@media screen and (max-width: 1000px) {
+  .card-container {
+    flex-direction: column !important;
+  }
+
+  section {
+    padding-top: 70px !important;
+  }
+
+  .card {
+    width: 100% !important;
+  }
+
+  .section-top {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    /* padding-top: 50px !important; */
+  }
+
+  #top {
+    margin-top: 0 !important;
+    max-width: 100vw !important;
+    height: fit-content !important;
+  }
+
+  #recent {
+    padding-top: 10px !important;
+  }
+
+  .swiper-slide,
+  .swiper {
+    border-radius: 0 !important;
+    height: 370px !important;
+  }
+
+  .swiper:after {
+    content: "";
+    background: linear-gradient(to bottom, #00000000, var(--background));
+    display: block;
+    width: 100vw;
+    height: 370px;
+    position: absolute;
+    transform: translateY(-100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+}

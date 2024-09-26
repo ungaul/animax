@@ -1,0 +1,337 @@
+:root {
+  --plyr-color-main: var(--accent-color);
+  --player-data-right-width: 32%;
+  --episode-preview-thumbnail-width: 150px;
+  --plyr-captions-background: transparent;
+  --plyr-control-spacing: 10px;
+  --video-height: 720px;
+  --player-data-right-width-px: 1050px;
+}
+
+#player {
+  position: absolute;
+  margin-top: var(--nav-height);
+  width: 100vw;
+  background: var(--background);
+  overflow-y: scroll;
+  height: 100vh;
+  z-index: 1;
+}
+
+#player {
+  overflow: scroll;
+}
+
+/* #player div.video-container{
+  width: 1320px;
+} */
+
+#player video {
+  height: var(--video-height);
+  margin: 0 auto;
+  max-height: 70vh;
+}
+
+.plyr__poster {
+  opacity: 100 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  filter: brightness(0.5);
+  left: 50% !important;
+  transform: translateX(-50%);
+  /* height: var(--video-height); */
+  width: calc(var(--video-height) * (16 / 9)) !important;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+}
+
+/* button[data-plyr="play"]{
+  display: none;
+} */
+
+.plyr:-webkit-full-screen video,
+.plyr:fullscreen video {
+  height: 100% !important;
+  max-height: 100% !important;
+}
+
+.plyr:-webkit-full-screen .plyr__poster,
+.plyr:fullscreen .plyr__poster {
+  width: auto !important;
+}
+
+input[data-plyr="seek"],
+input[data-plyr="volume"] {
+  cursor: var(--link-cursor) !important;
+}
+
+#player-data-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+#player-data {
+  width: var(--player-data-right-width-px);
+  height: fit-content;
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+#player-data-right article {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#player-data-right article .episode-preview *:hover {
+  cursor: var(--link-cursor);
+}
+
+#player-data-right {
+  width: var(--player-data-right-width);
+  max-width: 92vw;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.episode-preview {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.episode-preview .mode,
+.episode-preview .mode span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.episode-preview .mode {
+  font-size: 0.9rem;
+}
+
+#player-data-left .mode {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.episode-preview .mode span ion-icon {
+  font-size: 1.2rem;
+}
+
+#player-data-left {
+  width: calc(100% - var(--player-data-right-width));
+  height: fit-content;
+}
+
+.episode-preview-thumbnail {
+  width: var(--episode-preview-thumbnail-width);
+  aspect-ratio: 16/9;
+  background-size: cover !important;
+  background-position: center !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.episode-preview-thumbnail ion-icon {
+  background: rgba(50, 50, 50, 0.75);
+  font-size: 1.625rem;
+  padding: 8px;
+  border-radius: 100%;
+}
+
+.episode-preview p,
+#previous-episode p,
+#next-episode p {
+  user-select: none;
+}
+
+#previous-episode p b,
+#next-episode p b {
+  font-size: 0.9rem;
+}
+
+.episode-preview-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc((var(--episode-preview-thumbnail-width) * (9 / 16)) - 10px);
+  padding: 5px 0;
+}
+
+#anime-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article * {
+  cursor: var(--link-cursor) !important;
+}
+
+#anime-info-inner {
+  display: flex;
+  gap: 10px;
+}
+
+.anime-name {
+  color: #f47521;
+  font-size: 1.05rem;
+}
+
+#anime-info-inner .vertical-bar {
+  background: rgb(80, 80, 80) !important;
+  width: 1px;
+  height: 20px;
+}
+
+#anime-info-inner .rating {
+  color: rgb(146, 146, 146) !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+}
+
+#anime-info ion-icon[name="bookmark"] {
+  color: #f47521;
+  font-size: 20px;
+  cursor: var(--link-cursor);
+}
+
+#episode-title {
+  font-size: 1.35rem;
+  margin-top: 10px;
+}
+
+.plyr__control {
+  cursor: var(--link-cursor) !important;
+}
+
+#more-episodes {
+  background: transparent;
+  text-transform: uppercase;
+  color: #f47521;
+  padding: 10px 17.5px;
+  gap: 7.5px;
+  width: fit-content;
+  border: 2px solid #f47521;
+  user-select: none;
+}
+
+#more-episodes ion-icon {
+  font-size: 17.5px;
+  rotate: 180deg;
+}
+
+#more-episodes:hover {
+  border: 2px solid #ff9710;
+  color: #ff9710;
+}
+
+.plyr__caption {
+  letter-spacing: 1px;
+  font-size: 30px;
+  text-shadow: 2px 2px 5px black, 2px 2px 5px black, 2px 2px 5px black, 2px 2px 5px black;
+  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+  line-height: 115% !important;
+  font-weight: 600 !important;
+  /* text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+  -webkit-font-smoothing: antialiased;
+}
+
+.plyr__captions {
+  transform: translateY(-55px) !important;
+}
+
+.plyr__captions .plyr__caption {
+  font-family: "JollyGood Serif Light" !important;
+  letter-spacing: 1px !important;
+}
+
+.plyr:-webkit-full-screen .plyr__captions,
+.plyr:fullscreen .plyr__captions {
+  line-height: 92.5% !important;
+}
+
+.plyr:-webkit-full-screen .plyr__caption,
+.plyr:fullscreen .plyr__caption {
+  font-size: 40px;
+  text-shadow: 2px 2px 7px black, 2px 2px 7px black, 2px 2px 7px black, 2px 2px 7px black, 2px 2px 7px black;
+}
+
+.plyr__caption i {
+  font-style: normal !important;
+}
+
+.plyr--full-ui *,
+.plyr--full-ui ::after,
+.plyr--full-ui ::before {
+  font-family: "Cera Pro";
+}
+
+#previous-episode:has(.episode-preview-thumbnail[data-src="url(https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/thumbnails/0.jpg)"]),
+#next-episode:has(.episode-preview-thumbnail[data-src="url(https://domainedelarochethulon.fr/config/assets/streaming-files/one-piece/img/thumbnails/1052.jpg)"])
+{
+  display: none;
+}
+
+#description {
+  margin-top: 15px;
+  font-family: "Arial Rounded";
+  font-weight: 500;
+  color: rgb(238, 238, 238);
+}
+
+.episode-preview-title {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(var(--player-data-right-width-px) * var(--player-data-right-width));
+  width: calc(336px - var(--episode-preview-thumbnail-width));
+}
+
+select#episode-quick-list {
+  background: var(--background) !important;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: "Cera Pro";
+  text-transform: uppercase;
+  padding: 10px;
+  max-width: 200px;
+}
+
+@media (orientation: landscape) {
+  /* .plyr:-webkit-full-screen .plyr__caption,
+  .plyr:fullscreen .plyr__caption {
+    font-size: 22.5px !important;
+  } */
+
+  /* :root {
+    --player-data-right-width: unset !important;
+    --plyr-control-spacing: 7px !important;
+  } */
+}
+
+@media screen and (max-width: 1100px) {
+  video {
+    min-height: (100vw * (16 / 9)) !important;
+  }
+
+  #player-data-container {
+    width: 97.5% !important;
+  }
+}

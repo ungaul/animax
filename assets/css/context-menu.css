@@ -1,0 +1,36 @@
+/* Right Click */
+a[href="/geijutsu/voir-animes/movies/"] {
+  display: none !important;
+}
+
+.context-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--bodybg-transparent);
+  margin: 0;
+  border: 1px solid rgb(20, 20, 20);
+  font-family: sans-serif;
+  transition: all 0.3s;
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  border-radius: 5px;
+  backdrop-filter: blur(10px) brightness(0.5);
+}
+
+.context-menu .horizontal-bar{
+  padding: 0 !important;
+  height: 1px !important;
+  background: var(--background) !important;
+  max-width: 100% !important;
+}
+
+.context-menu * {
+  padding: 10px;
+  background: transparent;
+}
+
+.context-menu *:hover {
+  background: rgb(20, 20, 20);
+}

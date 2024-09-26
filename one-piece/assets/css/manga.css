@@ -1,0 +1,71 @@
+:root{
+  --viewer-volume-selector-width: 200px;
+}
+
+#manga-player {
+  position: fixed;
+  top: var(--nav-height);
+  bottom: 0;
+  width: 100vw;
+  background: var(--background);
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+#viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 15px;
+}
+
+.viewer-frame {
+  width: 490px;
+  background-size: cover !important;
+  aspect-ratio: 108/169;
+}
+
+select#viewer-volume-selector {
+  background: var(--background) !important;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: "Cera Pro";
+  text-transform: uppercase;
+  padding: 10px;
+  width: var(--viewer-volume-selector-width);
+  position: absolute;
+  transform: translateX(calc(10px + var(--viewer-volume-selector-width)));
+  height: 40px !important;
+}
+
+#viewer-buttons {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  background: var(--background);
+  border-top: 1px solid var(--main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#viewer-buttons * {
+  width: 40px;
+  height: 40px;
+  color: var(--accent-color);
+}
+
+#sagas article img {
+  height: calc(200px * (18 / 11));
+}
+
+#viewer-buttons div:hover {
+  filter: brightness(1.25);
+  cursor: var(--link-cursor);
+}

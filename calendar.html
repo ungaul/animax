@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html translate="no" lang="fr" notranslate>
+  <head>
+    <!-- HTML Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="streaming, anime, free, adfree, sanspub, gratuit, illimité, onepiece" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.animax.site/" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Meta Tags -->
+    <title>Animax</title>
+    <meta property="og:title" content="Animax" />
+    <meta name="description" content="Animax" />
+    <meta itemprop="description" content="Animax" />
+    <meta name="twitter:title" content="Animax" />
+    <meta name="twitter:description" content="Animax" />
+
+    <!-- Design -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+    <meta name="theme-color" content="#121212" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta itemprop="image" content="./assets/img/Nakama.jpg" />
+    <meta name="twitter:image" content="./assets/img/Nakama.jpg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- JS -->
+    <script defer src="/assets/js/common.js"></script>
+    <script defer src="../assets/js/common.js"></script>
+    <script defer src="assets/js/animations.js"></script>
+    <script defer src="assets/js/calendar.js"></script>
+    <script defer src="assets/js/context-menu.js"></script>
+    <script defer src="assets/js/header.js"></script>
+  </head>
+
+  <body>
+    <!-- Context Menu -->
+    <div class="context-menu"></div>
+
+    <!-- Phone Menu -->
+    <div id="new-phone-menu"></div>
+
+    <div id="more" class="hidden">
+      <p onclick="transitionToPage('/animax.html')">Accueil du site</p>
+      <p onclick="transitionToPage('/voir-animes/')">VoirAnimes</p>
+    </div>
+
+    <div id="app">
+      <div id="left" style="display: none"></div>
+      <div id="right" style="display: none"></div>
+      <nav>
+        <div id="nav-content">
+          <div id="nav-left">
+            <div onclick="transitionToPage('/geijutsu/animax.html')"></div>
+              <div class="logo">
+                <img src="assets/img/favicon-128x.png" alt="Logo" />
+              </div>
+            </div>
+            <!-- <div onclick="transitionToPage('/voir-animes/')" target="_blank" rel="nofollow">VoirAnimes</div> -->
+          </div>
+          <div id="nav-right">
+            <ion-icon name="search-outline"></ion-icon>
+            <ion-icon name="bookmark-outline"></ion-icon>
+            <ion-icon name="add-outline"></ion-icon>
+            <div id="profile">
+              <img src="assets/img/pfp/pfp-1.jpg" alt="Profile Picture" class="pfp" />
+              <ion-icon name="caret-down-outline"></ion-icon>
+            </div>
+          </div>
+          <label id="phone-menu-open">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+      </nav>
+      <div id="dates">
+        <h1>Prochaines arrivées</h1>
+        <h3>Anime</h3>
+        <div class="horizontal-bar"></div>
+        <div id="dates-container">
+          <div onclick="transitionToPage('/one-piece/')">
+            <div class="date-card">
+              <div class="date-illustration-container">
+                <div class="date-illustration" style="background: url(one-piece/assets/img/one-piece-anime.jpg)"></div>
+              </div>
+              <p class="release">One Piece</p>
+              <p class="date">
+                17/12/2022 <span>⬪ Être notifié<ion-icon name="notifications-outline"></ion-icon></span>
+              </p>
+            </div>
+          </div>
+          <div onclick="transitionToPage('/spy-family/')">
+            <div class="date-card">
+              <div class="date-illustration-container">
+                <div class="date-illustration" style="background: url(spy-family/assets/img/spy-family-anime.jpg)"></div>
+              </div>
+              <p class="release">Spy × Family</p>
+              <p class="date">
+                01/02/2023 <span>⬪ Être notifié<ion-icon name="notifications-outline"></ion-icon></span>
+              </p>
+            </div>
+          </div>
+          <div onclick="transitionToPage('/vinland-saga/')">
+            <div class="date-card">
+              <div class="date-illustration-container">
+                <div class="date-illustration" style="background: url(vinland-saga/assets/img/vinland-saga-anime.jpg)"></div>
+              </div>
+              <p class="release">Vinland Saga</p>
+              <p class="date">
+                20/01/2023 <span>⬪ Être notifié<ion-icon name="notifications-outline"></ion-icon></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h3>Manga</h3>
+        <div class="horizontal-bar"></div>
+        <div id="dates-container">
+          <div onclick="transitionToPage('/one-piece/')">
+            <div class="date-card">
+              <div class="date-illustration-container">
+                <div class="date-illustration" style="background: url(one-piece/assets/img/one-piece-manga.jpg)"></div>
+              </div>
+              <p class="release">One Piece</p>
+              <p class="date">
+                31/12/2022 <span>⬪ Être notifié<ion-icon name="notifications-outline"></ion-icon></span>
+              </p>
+            </div>
+          </div>
+          <div onclick="transitionToPage('/spy-family/')">
+            <div class="date-card">
+              <div class="date-illustration-container">
+                <div class="date-illustration" style="background: url(spy-family/assets/img/spy-family-manga.jpg)"></div>
+              </div>
+              <p class="release">Spy × Family</p>
+              <p class="date">
+                01/01/2023 <span>⬪ Être notifié<ion-icon name="notifications-outline"></ion-icon></span>
+              </p>
+            </div>
+          </div>
+          <div onclick="transitionToPage('/vinland-saga/')">
+            <div class="date-card">
+              <div class="date-illustration-container">
+                <div class="date-illustration" style="background: url(vinland-saga/assets/img/vinland-saga-manga.jpg)"></div>
+              </div>
+              <p class="release">Vinland Saga</p>
+              <p class="date">
+                01/01/2023 <span>⬪ Être notifié<ion-icon name="notifications-outline"></ion-icon></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>

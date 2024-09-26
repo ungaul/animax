@@ -1,0 +1,63 @@
+#table {
+  display: flex;
+  width: 70vw;
+  height: 70vh;
+  overflow-x: scroll;
+  margin-top: 50px;
+  border: 1px solid #333333;
+  flex: 0 0 auto;
+}
+
+#number,
+#title,
+#date,
+#rating,
+#description {
+  display: flex;
+  flex-flow: row;
+  flex-direction: column;
+  width: fit-content;
+  flex: 0 0 auto;
+}
+
+#number div,
+#title div,
+#date div,
+#rating div,
+#description div,
+#saga div {
+  border: 1px solid #333333;
+  height: 30px;
+  padding: 5px;
+}
+
+#number div {
+  width: 113px;
+}
+
+#title div {
+  width: 903px;
+}
+
+#date div {
+  width: 165px;
+}
+
+#rating div {
+  width: 35px;
+}
+
+#description div {
+  width: 1500px;
+  /* overflow: hidden; */
+  white-space: nowrap;
+}
+
+#saga div {
+  width: 330px;
+}
+
+#top {
+  height: 120px !important;
+  font-size: 30px !important;
+}
