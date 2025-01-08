@@ -1,0 +1,11 @@
+:root {
+  --accent-color: #ff7697;
+}
+
+.seasonnumber {
+  display: none !important;
+}
+
+.otherscontainer::before {
+  content: "Autres Animes :" !important;
+}
