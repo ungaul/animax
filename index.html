@@ -1,60 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" notranslate translate="no">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Version</title>
-    <style>
-        body {
-            display: flex;
-            margin: 0;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
+  <!-- HTML Meta Tags -->
+  <title>ホーム</title>
+  <meta name="description" content="ホーム" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdf6f3" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  <meta name="googlebot-news" content="nosnippet" />
+  <meta name="robots" content="noindex" />
 
-        .section {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            box-sizing: border-box;
-            transition: 0.3s;
-            background-size: cover !important;
-            background-position: center !important;
-        }
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="ホーム" />
+  <meta itemprop="description" content="ホーム" />
+  <meta itemprop="image" content="assets/img/screenshot-desktop.jpg" />
 
-        .section:hover {
-            filter: brightness(0.9);
-            cursor: pointer;
-        }
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://ungaul.github.io" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ホーム" />
+  <meta property="og:description" content="ホーム" />
+  <meta property="og:image" content="assets/img/screenshot-desktop.jpg" />
 
-        .section a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-            color: #fff;
-            font-size: 3rem;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ホーム" />
+  <meta name="twitter:description" content="ホーム" />
+  <meta name="twitter:image" content="assets/img/screenshot-desktop.jpg" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/light.css" id="darkmodestylesheet" />
+  <link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/home.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/preloader.css" /> -->
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script defer src="assets/js/darkmode.js"></script>
+  <script defer src="assets/js/preloader.js"></script>
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="assets/js/context-menu.js"></script>
 </head>
 
 <body>
-    <div class="section" style="background:url(assets/img/v1.png)">
-        <a href="v1/">V1</a>
+  
+  <!-- PRELOADER  -->
+  <div id="preloader">
+    <p class="preloader-waiting">ロード..</p>
+    <div class="preload-count-container">
+      <p class="number colored-text"></p>
+      <span class="colored-text">%</span>
     </div>
-    <div class="section" style="background:url(assets/img/v2.png)">
-        <a href="v2/">V2</a>
+  </div>
+
+  <!-- Context Menu -->
+  <div class="context-menu"></div>
+
+  <div id="app">
+    <div class="section" data-url="v1">
+      <h1>v1</h1>
+      <p>/v1</p>
     </div>
-    <div class="section">
-        <a href="v3/">V3</a>
+    <div class="section" data-url="v2">
+      <h1>v2</h1>
+      <p>/v2</p>
     </div>
+    <div class="section" data-url="v3">
+      <h1>v3</h1>
+      <p>/v3</p>
+    </div>
+    <!-- <div class="section" data-url="article">
+        <h1>Article</h1>
+        <p>article/</p>
+      </div> -->
+    <!-- <div class="section" data-url="niku-kappo">
+        <h1>肉割烹</h1>
+        <p>/niku-kappo</p>
+      </div> -->
+    <!-- <div class="section" data-url="surprise">
+        <h1>Surprise</h1>
+        <p>surprise/</p>
+      </div> -->
+    <!-- <div class="section" data-url="foodzillas">
+        <h1>FoodZillas</h1>
+        <p>foodzillas/</p>
+      </div> -->
+  </div>
+  <div id="main-button" data-url="/">トップ</div>
 </body>
 
 </html>
